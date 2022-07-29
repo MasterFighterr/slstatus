@@ -65,16 +65,10 @@ static const char unknown_str[] = "n/a";
  */
 static const struct arg args[] = {
 	/* function format          argument */
-//	{ wifi_essid, "WIFI %s%",   "wlan0",    },
-//	{ wifi_perc,  "%s%|",	    "wlan0",    },
-	{ battery_perc, "%s%|",	    "BAT0",	},
-	{ battery_state, "%s%|",    "BAT0",	},
+	{ wifi_essid, "%s",   "wlan0",    },
+	{ battery_perc, "BATT %s%|",	    "BAT0",	},
 	{ cpu_perc, "CPU %s%|",     NULL,    },
-//	{ cpu_freq, "CPU %s%",	    NULL,    },
 	{ ram_perc, "RAM %s%|",      NULL,    },
-//	{ ram_used, "RAM %s%",	    NULL,    },
-//	{ wifi_essid, "WIFI %s%",   "wlpi6s0"    },
-//	{ run_command,    "🔉%s|",     "pamixer --get-volume-human" },
         { run_command, "🔉%4s|", "amixer sget Master | awk -F\"[][]\" '/%/ { print $2 }' | head -n1" },
 	{ datetime, "%s",	     "%T %F" },
 };
